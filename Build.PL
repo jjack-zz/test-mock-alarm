@@ -10,6 +10,7 @@ Module::Build->new(
     create_readme      => 1,
     create_makefile_pl => 'traditional',
     build_requires     => {
-        'Test::More' => '0.98',
+        'Test::More'      => '0',
+        'Test::Exception' => '0',
     },
 )->create_build_script();
