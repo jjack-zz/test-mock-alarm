@@ -1,6 +1,6 @@
 Build.PL
 CHANGES
-lib/Test/MockAlarm.pm
+lib/Test/Mock/Alarm.pm
 LICENSE
 Makefile.PL
 MANIFEST

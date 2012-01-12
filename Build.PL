@@ -3,7 +3,7 @@
 use Module::Build;
 
 Module::Build->new(
-    module_name        => 'Test::MockAlarm',
+    module_name        => 'Test::Mock::Alarm',
     license            => 'perl',
     dist_abstract      => 'Replace the alarm function with whatever you want',
     dist_author        => 'Jeremy Jack <jeremy@rocketscientry.com>',

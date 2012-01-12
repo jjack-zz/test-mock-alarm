@@ -1,7 +1,7 @@
 use Test::Exception;
 use Test::More tests => 3;
 
-use Test::MockAlarm qw(set_alarm restore_alarm);
+use Test::Mock::Alarm qw(set_alarm restore_alarm);
 
 ## override the built-in alarm
 set_alarm( sub { die 'you gave the alarm: ' . (shift) } );
