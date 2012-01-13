@@ -8,7 +8,7 @@ our @ISA       = qw(Exporter);
 our @EXPORT_OK = qw(set_alarm restore_alarm);
 
 BEGIN {
-    our $VERSION = '0.10';
+    our $VERSION = '0.12';
     *CORE::GLOBAL::alarm = \&Test::Mock::Alarm::mocked_alarm;
 }
 
@@ -45,7 +45,7 @@ Test::Mock::Alarm - Replace the alarm function with whatever you want.
 
 =head1 VERSION
 
-version 0.10
+version 0.12
 
 =head1 SYNOPSIS
 
