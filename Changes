@@ -1,4 +1,8 @@
 Revision history for Test-Mock-Alarm
 
+0.12    2012-01-12
+        - upload to CPAN
+        - add Makefile.PL
+
 0.10    2011-10-30
         - Initial public release
