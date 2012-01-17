@@ -41,7 +41,7 @@ __END__
 
 =head1 NAME
 
-Test::Mock::Alarm - Replace the alarm function with whatever you want.
+Test::Mock::Alarm - Mock perl's built-in alarm function
 
 =head1 VERSION
 
@@ -50,7 +50,7 @@ version 0.12
 =head1 SYNOPSIS
 
     # make this the first include
-    use Test::Moc::kAlarm qw(set_alarm restore_alarm);
+    use Test::Mock::Alarm qw(set_alarm restore_alarm);
 
     # trigger any alarm of 15 seconds
     set_alarm( sub { die 'alarm' if (shift == 15) } );
