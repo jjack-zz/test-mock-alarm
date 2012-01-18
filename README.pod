@@ -1,44 +1,3 @@
-package Test::Mock::Alarm;
-
-use strict;
-use warnings;
-
-use Exporter;
-our @ISA       = qw(Exporter);
-our @EXPORT_OK = qw(set_alarm restore_alarm);
-
-BEGIN {
-    our $VERSION = '0.13';
-    *CORE::GLOBAL::alarm = \&Test::Mock::Alarm::mocked_alarm;
-}
-
-my $_alarm;
-
-sub mocked_alarm {
-    if ( defined $_alarm && ref($_alarm) eq 'CODE' ) {
-        return $_alarm->(shift);
-    }
-    else {
-        return CORE::alarm(shift);
-    }
-}
-
-sub set_alarm {
-    $_alarm = shift;
-
-    return;
-}
-
-sub restore_alarm {
-    undef $_alarm;
-
-    return;
-}
-
-1;
-
-__END__
-
 =head1 NAME
 
 Test::Mock::Alarm - Mock perl's built-in alarm function
@@ -88,17 +47,15 @@ with whatever you'd like, allowing you to trigger alarms to test your alarm hand
 =item set_alarm
 
 This will replace the built-in C<alarm()> with whatever you'd like. Almost always, this will look
-something like:
+something like this:
 
-    # all alarms of 60 seconds will die with 'alarm'
+    # will cause all alarms of 60 seconds to die with 'alarm'
     set_alarm( sub { die 'alarm' if ( shift == 60 ) } );
 
-or
-
-    # all alarms called from within 'Module::function' will die with 'alarm' 
+    # will cause all alarms called from within 'Module::function' to die with 'alarm' 
     set_alarm( sub { die 'alarm' if ( (caller(3))[3] eq 'Module::function' ) } );
 
-These are just two examples but they should be able to handle most of your alarm testing.
+These are just two examples that should be able to handle most of your alarm testing.
 
 =cut
 
